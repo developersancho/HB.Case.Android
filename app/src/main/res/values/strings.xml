@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HB Case</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_exit_label">Press BACK again to exit</string>
+</resources>
