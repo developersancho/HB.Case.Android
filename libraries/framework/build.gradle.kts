@@ -57,4 +57,7 @@ dependencies {
     implementation(SupportLib.LifecycleViewModel)
     implementation(SupportLib.LifecycleRuntime)
     implementation(SupportLib.Paging)
+
+    implementation(NetworkLib.Retrofit)
+    implementation(NetworkLib.Moshi)
 }
