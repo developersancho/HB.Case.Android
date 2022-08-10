@@ -10,15 +10,15 @@ plugins {
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Configs.CompileSdk
 
     defaultConfig {
-        applicationId = "com.developersancho.hb"
-        minSdk = 23
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        applicationId = Configs.ApplicationId
+        minSdk = Configs.MinSdk
+        targetSdk = Configs.TargetSdk
+        versionCode = Configs.VersionCode
+        versionName = Configs.VersionName
+        testInstrumentationRunner = Configs.TestInstrumentationRunner
         vectorDrawables.useSupportLibrary = true
         buildConfigField("String", "BASE_URL", "\"https://itunes.apple.com/\"")
     }
