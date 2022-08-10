@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.HBCase" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.HBCase" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/red_primary</item>
+        <item name="colorPrimaryVariant">@color/red_primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,70 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:color">@color/black</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextStyle.FootNote">
+        <item name="android:textSize">@dimen/font_size_footnote</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:translateY">-0.46</item>
+    </style>
+
+    <!-- ## EDIT TEXT  ### -->
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="EditText.SearchBar">
+        <item name="android:background">@drawable/bg_search_bar</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/red_tint_20</item>
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/font_size_subhead</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="drawableStartCompat">@drawable/ic_search_bar_small</item>
+        <item name="android:drawablePadding">@dimen/margin_medium</item>
+        <item name="android:paddingStart">@dimen/margin_medium</item>
+        <item name="android:paddingEnd">@dimen/margin_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+    <style name="EditText.SearchBar.Light">
+        <item name="android:background">@drawable/bg_search_bar_light</item>
+        <item name="android:textColor">@color/gray_900</item>
+        <item name="android:textColorHint">@color/gray_400</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="drawableStartCompat">@drawable/ic_search_bar_small_gray</item>
+    </style>
+
+    <!-- ### RADIO BUTTON ###-->
+
+    <style name="CustomRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textSize">@dimen/font_size_footnote</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:translateY">-0.46</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:button">@color/transparent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingStart">@dimen/margin_medium</item>
+        <item name="android:paddingEnd">@dimen/margin_medium</item>
+    </style>
+
+    <style name="SearchTypeChip" parent="CustomRadioButton">
+        <item name="android:background">@drawable/selector_radio_gray_chip_background_color</item>
+        <item name="android:textColor">@color/selector_radio_gray_chip_text_color</item>
+        <item name="android:layout_margin">@dimen/margin_xxs</item>
+    </style>
+
+    <style name="progressBarStyle">
+        <item name="colorAccent">@color/red_primary</item>
+        <item name="colorControlActivated">@color/red_primary</item>
+        <item name="colorControlHighlight">@color/red_primary</item>
     </style>
 </resources>

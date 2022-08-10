@@ -1,7 +1,10 @@
 package com.developersancho.data.model.dto
 
+import android.os.Parcelable
 import com.developersancho.data.model.remote.SearchItem
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class SearchItemDto(
     val trackId: Int?,
     val trackName: String?,
@@ -15,7 +18,7 @@ data class SearchItemDto(
     val artistName: String?,
     val artworkUrl600: String?,
     val artworkUrl512: String?
-)
+) : Parcelable
 
 fun SearchItem.toSearchItemDto() = SearchItemDto(
     trackId,

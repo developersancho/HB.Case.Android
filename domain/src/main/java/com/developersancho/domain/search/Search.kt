@@ -16,7 +16,7 @@ class Search @Inject constructor(
 ) : RequestPagingUseCase<Search.Params, SearchItemDto>() {
 
     data class Params(
-        val query: String? = null,
+        val keyword: String? = null,
         val entity: String? = null,
         val limit: Int = 20
     )

@@ -6,6 +6,7 @@ object SupportLib {
     const val Material = "com.google.android.material:material:1.6.1"
     const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val Recyclerview = "androidx.recyclerview:recyclerview:1.2.1"
+    const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     const val CoroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3"
     const val CoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3"

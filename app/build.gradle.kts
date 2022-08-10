@@ -38,6 +38,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+        freeCompilerArgs = listOf(
+            "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xopt-in=kotlinx.coroutines.FlowPreview"
+        )
     }
     buildFeatures {
         viewBinding = true
@@ -98,5 +102,7 @@ dependencies {
     implementation(SupportLib.LifecycleViewModel)
     implementation(SupportLib.LifecycleRuntime)
     implementation(SupportLib.Paging)
+
+    implementation(SupportLib.SwipeRefreshLayout)
 
 }

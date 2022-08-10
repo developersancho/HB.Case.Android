@@ -7,7 +7,7 @@ import retrofit2.http.QueryMap
 interface SearchService {
     @GET(SEARCH)
     suspend fun search(
-        @QueryMap options: Map<String, Any>
+        @QueryMap options: Map<String, String>
     ): SearchResponse
 
     companion object {

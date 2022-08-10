@@ -8,5 +8,5 @@ class SearchRepository @Inject constructor(
     @get:VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal val service: SearchService
 ) {
-    suspend fun search(queryParams: Map<String, Any>) = service.search(queryParams)
+    suspend fun search(queryParams: Map<String, String>) = service.search(queryParams)
 }

@@ -1,14 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.search.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSearch"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/red_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearch"
+            style="@style/EditText.SearchBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:hint="@string/hint_search"
+            android:imeOptions="actionSearch"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroupFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clSearch">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbMovie"
+            style="@style/SearchTypeChip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/chip_type_radio_height"
+            android:checked="true"
+            android:text="@string/chip_movie" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbMusic"
+            style="@style/SearchTypeChip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/chip_type_radio_height"
+            android:text="@string/chip_music" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbEbook"
+            style="@style/SearchTypeChip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/chip_type_radio_height"
+            android:text="@string/chip_ebook" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rbPodcast"
+            style="@style/SearchTypeChip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/chip_type_radio_height"
+            android:text="@string/chip_podcast" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSearchInfo"
+        style="@style/TextStyle.FootNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupFilter" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupFilter">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_search" />
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:theme="@style/progressBarStyle"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

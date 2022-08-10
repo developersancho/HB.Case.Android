@@ -4,4 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="app_exit_label">Press BACK again to exit</string>
+    <string name="hint_search">Search</string>
+    <string name="chip_movie">Movie</string>
+    <string name="chip_music">Music</string>
+    <string name="chip_ebook">Ebook</string>
+    <string name="chip_podcast">Podcast</string>
 </resources>

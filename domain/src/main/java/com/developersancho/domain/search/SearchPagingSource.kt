@@ -13,7 +13,6 @@ class SearchPagingSource(
 
     companion object {
         private const val START_INDEX = 1
-        private const val OFFSET_FACTOR = 10
         private const val QUERY_LIMIT = "limit"
         private const val QUERY_OFFSET = "offset"
         private const val QUERY_TERM = "term"
@@ -29,12 +28,11 @@ class SearchPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, SearchItemDto> {
         val page = params.key ?: START_INDEX
-        val offset = (page - START_INDEX) * OFFSET_FACTOR
         return try {
-            val queryParams = hashMapOf<String, Any>()
-            queryParams[QUERY_LIMIT] = searchParams.limit
-            queryParams[QUERY_OFFSET] = offset
-            searchParams.query?.let { queryParams[QUERY_TERM] = it }
+            val queryParams = hashMapOf<String, String>()
+            queryParams[QUERY_LIMIT] = searchParams.limit.toString()
+            queryParams[QUERY_OFFSET] = page.toString()
+            searchParams.keyword?.let { queryParams[QUERY_TERM] = it }
             searchParams.entity?.let { queryParams[QUERY_ENTITY] = it }
 
             val response = repository.search(queryParams)

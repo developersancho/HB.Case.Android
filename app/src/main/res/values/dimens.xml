@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_size_footnote">14sp</dimen>
+    <dimen name="font_size_subhead">16sp</dimen>
+
+    <dimen name="margin_huge">40dp</dimen>
+    <dimen name="margin_xxl">26dp</dimen>
+    <dimen name="margin_xl">20dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_xs">4dp</dimen>
+    <dimen name="margin_xxs">2dp</dimen>
+
+    <dimen name="radius_xxl">45dp</dimen>
+
+    <dimen name="appbar_height">95dp</dimen>
+    <dimen name="chip_type_radio_height">37dp</dimen>
+
+</resources>
