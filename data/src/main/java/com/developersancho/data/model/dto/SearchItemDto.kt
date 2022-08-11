@@ -15,9 +15,7 @@ data class SearchItemDto(
     val collectionId: Int?,
     val currency: String?,
     val description: String?,
-    val artistName: String?,
-    val artworkUrl600: String?,
-    val artworkUrl512: String?
+    val artistName: String?
 ) : Parcelable
 
 fun SearchItem.toSearchItemDto() = SearchItemDto(
@@ -30,9 +28,7 @@ fun SearchItem.toSearchItemDto() = SearchItemDto(
     collectionId,
     currency,
     description,
-    artistName,
-    artworkUrl600,
-    artworkUrl512
+    artistName
 )
 
 fun List<SearchItem>.toSearchItemDtoList() = map { it.toSearchItemDto() }
