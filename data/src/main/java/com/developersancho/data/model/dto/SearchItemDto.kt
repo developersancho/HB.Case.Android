@@ -16,7 +16,22 @@ data class SearchItemDto(
     val currency: String?,
     val description: String?,
     val artistName: String?
-) : Parcelable
+) : Parcelable {
+    companion object {
+        fun init() = SearchItemDto(
+            trackId = 120954025,
+            trackName = "Upside Down",
+            collectionPrice = 10.99,
+            artworkUrl100 = "http://a1.itunes.apple.com/r10/Music/3b/6a/33/mzi.qzdqwsel.100x100-75.jpg\"",
+            releaseDate = null,
+            collectionName = "Sing-a-Longs and Lullabies for the Film Curious George",
+            collectionId = 120954021,
+            currency = "USD",
+            description = null,
+            artistName = "Jack Johnson"
+        )
+    }
+}
 
 fun SearchItem.toSearchItemDto() = SearchItemDto(
     trackId,
