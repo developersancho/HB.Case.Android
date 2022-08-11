@@ -33,9 +33,19 @@ android {
 }
 
 dependencies {
-    implementation(SupportLib.CoreKtx)
-    implementation(SupportLib.Appcompat)
-    testImplementation(TestingLib.Junit)
-    androidTestImplementation(AndroidTestingLib.JunitExt)
-    androidTestImplementation(AndroidTestingLib.EspressoCore)
+    api(TestingLib.Junit)
+    api(AndroidTestingLib.JunitExt)
+    api(AndroidTestingLib.EspressoCore)
+    api(TestingLib.Coroutine)
+    api(TestingLib.Truth)
+    api(TestingLib.Robolectric)
+    api(TestingLib.Turbine)
+    api(TestingLib.Mockk)
+    api(TestingLib.Okhttp)
+    api(TestingLib.Hamcrest)
+    api(TestingLib.Json)
+    implementation(NetworkLib.Moshi)
+    implementation(NetworkLib.Retrofit)
+    implementation(NetworkLib.RetrofitMoshi)
+    implementation(NetworkLib.LoggingInterceptor)
 }

@@ -52,10 +52,12 @@ object TestingLib {
     const val Junit = "junit:junit:4.13.2"
     const val Coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3"
     const val Truth = "com.google.truth:truth:1.1.3"
-    const val Robolectric = "org.robolectric:robolectric:4.7.3"
+    const val Robolectric = "org.robolectric:robolectric:4.8.1"
     const val Turbine = "app.cash.turbine:turbine:0.7.0"
-    const val Mockk = "io.mockk:mockk:1.12.3"
+    const val Mockk = "io.mockk:mockk:1.12.4"
     const val Okhttp = "com.squareup.okhttp3:mockwebserver:5.0.0-alpha.9"
+    const val Hamcrest = "org.hamcrest:hamcrest-library:2.2"
+    const val Json = "org.json:json:20210307"
 }
 
 object AndroidTestingLib {
