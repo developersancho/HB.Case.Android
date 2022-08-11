@@ -12,10 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/app_bg_color</item>
+        <item name="android:windowBackground">@color/app_bg_color</item>
     </style>
 
     <style name="TextStyle">
-        <item name="android:color">@color/black</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:letterSpacing">-0.01</item>
     </style>
 
@@ -23,6 +25,13 @@
         <item name="android:textSize">@dimen/font_size_footnote</item>
         <item name="android:lineSpacingExtra">1sp</item>
         <item name="android:translateY">-0.46</item>
+    </style>
+
+    <style name="TextStyle.ToolbarTitle">
+        <item name="android:textSize">@dimen/margin_xl</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:translateY">-0.46</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <!-- ## EDIT TEXT  ### -->

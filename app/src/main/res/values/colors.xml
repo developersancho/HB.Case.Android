@@ -32,4 +32,6 @@
     <color name="gray_950">#141414</color>
 
     <color name="transparent">#00000000</color>
+
+    <color name="app_bg_color">#F5F2F5</color>
 </resources>

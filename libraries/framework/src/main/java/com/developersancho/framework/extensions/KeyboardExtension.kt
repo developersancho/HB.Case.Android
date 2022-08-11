@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.developersancho.framework.extensions
 
 import android.app.Activity
