@@ -60,18 +60,14 @@ android.applicationVariants.all {
 dependencies {
     implementation(project(mapOf("path" to ":data")))
     implementation(project(mapOf("path" to ":domain")))
-    implementation(project(mapOf("path" to ":libraries:testutils")))
     implementation(project(mapOf("path" to ":libraries:framework")))
     implementation(project(mapOf("path" to ":libraries:navigation")))
+    testImplementation(project(mapOf("path" to ":libraries:testutils")))
 
     implementation(SupportLib.CoreKtx)
     implementation(SupportLib.Appcompat)
     implementation(SupportLib.Material)
     implementation(SupportLib.ConstraintLayout)
-
-    testImplementation(TestingLib.Junit)
-    androidTestImplementation(AndroidTestingLib.JunitExt)
-    androidTestImplementation(AndroidTestingLib.EspressoCore)
 
     implementation(SupportLib.Recyclerview)
 

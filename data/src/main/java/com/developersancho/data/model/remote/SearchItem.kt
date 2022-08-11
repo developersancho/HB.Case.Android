@@ -14,7 +14,5 @@ data class SearchItem(
     @Json(name = "collectionId") val collectionId: Int?,
     @Json(name = "currency") val currency: String?,
     @Json(name = "description") val description: String?,
-    @Json(name = "artistName") val artistName: String?,
-    @Json(name = "artworkUrl600") val artworkUrl600: String?,
-    @Json(name = "artworkUrl512") val artworkUrl512: String?
+    @Json(name = "artistName") val artistName: String?
 )

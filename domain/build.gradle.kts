@@ -31,21 +31,21 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
+        freeCompilerArgs = listOf(
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-opt-in=kotlinx.coroutines.FlowPreview"
+        )
     }
 }
 
 dependencies {
     implementation(project(mapOf("path" to ":data")))
-    implementation(project(mapOf("path" to ":libraries:testutils")))
     implementation(project(mapOf("path" to ":libraries:framework")))
+    testImplementation(project(mapOf("path" to ":libraries:testutils")))
 
     implementation(SupportLib.CoreKtx)
     implementation(SupportLib.CoroutineCore)
     implementation(SupportLib.CoroutineAndroid)
-
-    testImplementation(TestingLib.Junit)
-    androidTestImplementation(AndroidTestingLib.JunitExt)
-    androidTestImplementation(AndroidTestingLib.EspressoCore)
 
     implementation(DaggerHiltLib.Android)
     kapt(DaggerHiltLib.Compiler)
