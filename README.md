@@ -120,7 +120,7 @@ Components of domain layer include:
 | Mode  | Search                                            | Detail                                    |
 |-------|---------------------------------------------------|-------------------------------------------------------|
 | Android-XML | <img src="art/screenshots/search.png" width="250">|<img src="art/screenshots/detail.png" width="250">      |
-| Android-COMPOSE  | <img src="art/screenshots/compose-search.png" width="250">|<img src="art/screenshots/compose-search.png" width="250"> |
+| Android-COMPOSE  | <img src="art/screenshots/compose-search.png" width="250">|<img src="art/screenshots/compose-detail.png" width="250"> |
 
 # Tech Stacks
 This project uses many of the popular libraries, plugins and tools of the android ecosystem.
