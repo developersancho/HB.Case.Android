@@ -3,6 +3,8 @@ package com.developersancho.hb.compose.features.detail
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -13,16 +15,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.developersancho.data.model.dto.SearchItemDto
 import com.developersancho.framework.base.mvi.BaseViewState
 import com.developersancho.framework.extensions.cast
+import com.developersancho.framework.extensions.toReleaseDate
 import com.developersancho.hb.compose.R
 import com.developersancho.hb.compose.app.extensions.SearchItemNavArgs
+import com.developersancho.hb.compose.app.extensions.toSearchItemNavArgs
+import com.developersancho.hb.compose.app.theme.HBCaseTheme
 import com.developersancho.hb.compose.app.widgets.HBToolbarWithNavIcon
 import com.developersancho.hb.compose.app.widgets.LoadingView
+import com.developersancho.hb.compose.features.detail.view.DetailTextRow
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -45,7 +54,7 @@ fun DetailScreen(
         )
     }, content = { paddings ->
         when (uiState) {
-            is BaseViewState.Success -> DetailContent(
+            is BaseViewState.Success -> DetailPage(
                 paddingValues = paddings,
                 state = uiState.cast<BaseViewState.Success<DetailViewState>>().data
             )
@@ -65,7 +74,7 @@ fun DetailScreen(
 }
 
 @Composable
-fun DetailContent(paddingValues: PaddingValues, state: DetailViewState) {
+private fun DetailPage(paddingValues: PaddingValues, state: DetailViewState) {
     LazyColumn(modifier = Modifier.padding(paddingValues)) {
         item("header") {
             Box(
@@ -79,6 +88,7 @@ fun DetailContent(paddingValues: PaddingValues, state: DetailViewState) {
                     model = ImageRequest.Builder(LocalContext.current)
                         .data(state.dto?.artworkUrl100)
                         .crossfade(true)
+                        .error(R.drawable.ic_error_image)
                         .build(),
                     contentDescription = null,
                     contentScale = ContentScale.FillHeight,
@@ -88,5 +98,51 @@ fun DetailContent(paddingValues: PaddingValues, state: DetailViewState) {
                 )
             }
         }
+
+        item("content") {
+            Box(modifier = Modifier.padding(8.dp)) {
+                DetailContent(state.dto)
+            }
+        }
+    }
+}
+
+@Composable
+private fun DetailContent(dto: SearchItemNavArgs?) {
+    Card(elevation = 8.dp, shape = MaterialTheme.shapes.large) {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            dto?.trackName?.let {
+                DetailTextRow(key = stringResource(id = R.string.text_track_name), value = it)
+            }
+            dto?.collectionName?.let {
+                DetailTextRow(key = stringResource(id = R.string.text_collection_name), value = it)
+            }
+            dto?.artistName?.let {
+                DetailTextRow(key = stringResource(id = R.string.text_artist_name), value = it)
+            }
+            dto?.description?.let {
+                DetailTextRow(key = stringResource(id = R.string.text_description), value = it)
+            }
+            dto?.collectionPrice?.let {
+                DetailTextRow(
+                    key = stringResource(id = R.string.text_price),
+                    value = "${it}-${dto.currency}"
+                )
+            }
+            dto?.releaseDate?.let {
+                DetailTextRow(
+                    key = stringResource(id = R.string.text_release_date),
+                    value = it.toReleaseDate()
+                )
+            }
+        }
+    }
+}
+
+@Preview(name = "DetailTextRowPreview", showBackground = true)
+@Composable
+private fun DetailTextRowPreview() {
+    HBCaseTheme {
+        DetailContent(SearchItemDto.init().toSearchItemNavArgs())
     }
 }
