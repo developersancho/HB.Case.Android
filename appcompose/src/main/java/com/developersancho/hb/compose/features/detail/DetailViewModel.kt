@@ -12,7 +12,7 @@ import javax.inject.Inject
 class DetailViewModel @Inject constructor(savedStateHandle: SavedStateHandle) :
     MviViewModel<BaseViewState<DetailViewState>, DetailEvent>() {
 
-    private val searchItemDto: SearchItemNavArgs = savedStateHandle.navArgs()
+    private val searchItemDto = savedStateHandle.navArgs() as SearchItemNavArgs
 
     override fun onTriggerEvent(eventType: DetailEvent) {
         when (eventType) {

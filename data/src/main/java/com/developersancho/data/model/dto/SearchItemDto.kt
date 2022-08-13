@@ -27,7 +27,7 @@ data class SearchItemDto(
             collectionName = "Sing-a-Longs and Lullabies for the Film Curious George",
             collectionId = 120954021,
             currency = "USD",
-            description = null,
+            description = "Description",
             artistName = "Jack Johnson"
         )
     }
