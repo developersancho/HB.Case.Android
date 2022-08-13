@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "HB Case"
+include(":appcompose")
 include(":app")
 include(":data")
 include(":domain")

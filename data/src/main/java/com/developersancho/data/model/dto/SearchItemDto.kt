@@ -22,12 +22,12 @@ data class SearchItemDto(
             trackId = 120954025,
             trackName = "Upside Down",
             collectionPrice = 10.99,
-            artworkUrl100 = "http://a1.itunes.apple.com/r10/Music/3b/6a/33/mzi.qzdqwsel.100x100-75.jpg\"",
-            releaseDate = null,
+            artworkUrl100 = "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/34/f4/d9/34f4d970-ab11-4614-0b9e-aa1a0b849692/00030206730906.rgb.jpg/100x100bb.jpg",
+            releaseDate = "2014-10-21T12:00:00Z",
             collectionName = "Sing-a-Longs and Lullabies for the Film Curious George",
             collectionId = 120954021,
             currency = "USD",
-            description = null,
+            description = "Description",
             artistName = "Jack Johnson"
         )
     }

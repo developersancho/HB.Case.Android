@@ -8,4 +8,10 @@ object Configs {
     const val VersionCode = 1
     const val VersionName = "1.0.0"
     const val TestInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+    object Compose {
+        const val ApplicationId = "com.developersancho.hb.compose"
+        const val VersionCode = 1
+        const val VersionName = "1.0.0"
+    }
 }

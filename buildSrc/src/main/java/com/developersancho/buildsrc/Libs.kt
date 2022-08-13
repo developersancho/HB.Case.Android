@@ -1,5 +1,49 @@
 package com.developersancho.buildsrc
 
+object ComposeLib {
+    const val Ui = "androidx.compose.ui:ui:${Versions.Compose}"
+    const val Material = "androidx.compose.material:material:${Versions.Compose}"
+    const val Preview = "androidx.compose.ui:ui-tooling-preview:${Versions.Compose}"
+    const val Runtime = "androidx.compose.runtime:runtime:${Versions.Compose}"
+    const val Foundation = "androidx.compose.foundation:foundation:${Versions.Compose}"
+    const val MaterialIconCore = "androidx.compose.material:material-icons-core:${Versions.Compose}"
+    const val MaterialIconExtended = "androidx.compose.material:material-icons-extended:${Versions.Compose}"
+    const val Tooling = "androidx.compose.ui:ui-tooling:${Versions.Compose}"
+    const val Manifest = "androidx.compose.ui:ui-test-manifest:${Versions.Compose}"
+
+    const val HiltNavigation = "androidx.hilt:hilt-navigation-compose:1.0.0"
+
+    const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1"
+    const val ConstraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.0"
+    const val Lottie = "com.airbnb.android:lottie-compose:5.0.3"
+    const val Paging = "androidx.paging:paging-compose:1.0.0-alpha14"
+    const val Coil = "io.coil-kt:coil-compose:2.1.0"
+
+    object AccompanistLib {
+        const val Swiperefresh = "com.google.accompanist:accompanist-swiperefresh:0.25.1"
+        const val Systemuicontroller = "com.google.accompanist:accompanist-systemuicontroller:0.25.1"
+        const val Insets = "com.google.accompanist:accompanist-insets:0.25.1"
+        const val PlaceholderMaterial = "com.google.accompanist:accompanist-placeholder-material:0.25.1"
+        const val NavigationMaterial = "com.google.accompanist:accompanist-navigation-material:0.25.1"
+        const val Permissions = "com.google.accompanist:accompanist-permissions:0.25.1"
+        const val Pager = "com.google.accompanist:accompanist-pager:0.25.1"
+        const val Indicators = "com.google.accompanist:accompanist-pager-indicators:0.25.1"
+        const val Webview = "com.google.accompanist:accompanist-webview:0.25.1"
+    }
+
+    object NavigationLib {
+        const val Navigation = "androidx.navigation:navigation-compose:2.5.1"
+        const val DestinationCore = "io.github.raamcosta.compose-destinations:core:1.7.15-beta"
+        const val DestinationKsp = "io.github.raamcosta.compose-destinations:ksp:1.7.15-beta"
+        const val DestinationAnimation =
+            "io.github.raamcosta.compose-destinations:animations-core:1.7.15-beta"
+    }
+
+    object TestingLib {
+        const val ComposeTestJunit = "androidx.compose.ui:ui-test-junit4:${Versions.Compose}"
+    }
+}
+
 object SupportLib {
     const val CoreKtx = "androidx.core:core-ktx:1.8.0"
     const val Appcompat = "androidx.appcompat:appcompat:1.4.2"
