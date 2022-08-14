@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
-class SearchFragment : BaseMviFragment<FragmentSearchBinding, SearchViewState, SearchViewModel>() {
+class SearchFragment : BaseMviFragment<FragmentSearchBinding, SearchViewModel>() {
     companion object {
         @JvmStatic
         fun newInstance() = SearchFragment()

@@ -17,7 +17,7 @@ import com.developersancho.hb.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailFragment : BaseMviFragment<FragmentDetailBinding, DetailViewState, DetailViewModel>() {
+class DetailFragment : BaseMviFragment<FragmentDetailBinding, DetailViewModel>() {
     companion object {
         const val ARG_SEARCH_ITEM_DTO = "arg_search_item_dto"
 
