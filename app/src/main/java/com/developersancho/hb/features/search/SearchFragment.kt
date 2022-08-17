@@ -38,7 +38,8 @@ class SearchFragment : BaseMviFragment<FragmentSearchBinding, SearchViewModel>()
         binding.rvSearch.setItemDecoration(left = 8, top = 12, right = 8, bottom = 0)
         binding.rvSearch.adapter = adapter
         adapter.onClickItem = {
-            navigateFragment(DetailFragment.newInstance(it), animation = AnimationType.DEFAULT)
+            val detail = DetailFragment.newInstance(it)
+            navigateFragment(detail, animation = AnimationType.DEFAULT)
         }
     }
 

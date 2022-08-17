@@ -2,6 +2,7 @@ package com.developersancho.framework.base.mvi
 
 import androidx.viewbinding.ViewBinding
 import com.developersancho.framework.base.BaseFragment
+import com.developersancho.framework.extensions.observeFlow
 import com.developersancho.framework.extensions.observeFlowStart
 
 abstract class BaseMviFragment<VB : ViewBinding, VM : MviViewModel<*, *>> :
@@ -13,6 +14,6 @@ abstract class BaseMviFragment<VB : ViewBinding, VM : MviViewModel<*, *>> :
 
     override fun observeUi() {
         super.observeUi()
-        observeFlowStart(viewModel.uiState, ::renderViewState)
+        observeFlow(viewModel.uiState, ::renderViewState)
     }
 }
